@@ -11,6 +11,11 @@
 <tbody>
     @foreach ($data as $item)
         <tr>
+            <td>
+                @if ($item->foto)
+                <img style="max-width:50px; max-height:50px" src="{{ url('foto').'/'. $item->foto}}">                    
+                @endif
+            </td>
             <td>{{ $item-> nomor_induk }}</td>
             <td>{{ $item-> nama }}</td>
             <td>{{ $item-> alamat }}</td>
