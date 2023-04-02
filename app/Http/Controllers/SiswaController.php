@@ -96,6 +96,7 @@ class SiswaController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        siswa::where('nomor_induk',$id)->delete();
+        return redirect('siswa')->with('success','Data berhasil DiHapus');
     }
 }

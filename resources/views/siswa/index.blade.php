@@ -17,6 +17,12 @@
             <td>
                 <a class="btn btn-secondary btn-sm"  href="{{ url('/siswa/'.$item->nomor_induk) }}">Detail</a>
                 <a class="btn btn-warning btn-sm"  href="{{ url('/siswa/'.$item->nomor_induk.'/edit') }}">Edit</a>
+                <form onsubmit=" return  confirm('Apakah anda yakin akan menghapus data ?')" class="d-inline" action="{{ url('/siswa/'. $item->nomor_induk) }}" method="POST">
+                @csrf
+                @method('DELETE')
+                <button class="btn btn-danger btn-sm" type="submit">Hapus</button>
+
+                </form>
             </td>
         </tr>
     @endforeach
