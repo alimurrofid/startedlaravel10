@@ -33,7 +33,7 @@ class SiswaController extends Controller
         Session::flash('nomor_induk', $request->nomor_induk);
         Session::flash('nama', $request->nama);
         Session::flash('alamat', $request->alamat);
-        
+
         $request->validate([
             'nomor_induk' => 'required|numeric',
             'nama' => 'required',
@@ -50,7 +50,7 @@ class SiswaController extends Controller
             'alamat' => $request->alamat
         ];
         siswa::create($data);
-        return redirect('siswa');
+        return redirect('siswa')->with('success','Data berhasil ditambahkan');
     }
 
     /**
