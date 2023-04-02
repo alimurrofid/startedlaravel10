@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\siswa;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class SiswaController extends Controller
 {
@@ -29,6 +30,10 @@ class SiswaController extends Controller
      */
     public function store(Request $request)
     {
+        Session::flash('nomor_induk', $request->nomor_induk);
+        Session::flash('nama', $request->nama);
+        Session::flash('alamat', $request->alamat);
+        
         $request->validate([
             'nomor_induk' => 'required|numeric',
             'nama' => 'required',
