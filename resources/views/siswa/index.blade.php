@@ -1,5 +1,6 @@
 @extends('layout/aplikasi')
 @section('konten')
+<a href="/siswa/create" class="btn btn-primary">Tambah data siswa</a>
 <table class="table">
 <thead>
         <th>Nomor Induk</th>
